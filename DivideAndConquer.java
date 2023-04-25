@@ -1,4 +1,5 @@
 
+import java.lang.System;
 public class DivideAndConquer {
 
 	String[] x;
@@ -8,8 +9,12 @@ public class DivideAndConquer {
 	public static void main(String[] args) {
 		String[] x = { "A", "A","C","A","G","T","T","A","C","C"};
 		String[] y = { "T", "A","A","G","G","T","C","A"};
+		
 		DivideAndConquer DC = new DivideAndConquer(x, y);
-		System.out.println(DC.opt(0, 0));
+		long startTime = System.nanoTime();
+		DC.opt(0, 0);
+		long endTime = System.nanoTime();
+		System.out.println(endTime - startTime);
 	}
 
 	public DivideAndConquer(String[] x, String[] y) {

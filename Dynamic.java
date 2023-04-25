@@ -9,7 +9,10 @@ public class Dynamic {
 		String[] y = { "T", "A", "A", "G", "G", "T", "C", "A" };
 		Dynamic Dy = new Dynamic(x, y);
 		
-		System.out.println("Output: " + Dy.opt());
+		long startTime = System.nanoTime();
+		Dy.opt();
+		long endTime = System.nanoTime();
+		System.out.println(endTime - startTime);
 
 	}
 	
@@ -28,12 +31,12 @@ public class Dynamic {
 		
 		for(int a = 0; a < table[0].length; a++) { //Rightmost Column Base case
 			this.table[x.length][a] = 2 * (y.length - a);
-			System.out.println(table[x.length][a]);
+			//System.out.println(table[x.length][a]);
 		}
 		
 		for(int b = 0; b < table.length; b++) { //Bottom Row Base case
 			this.table[b][y.length] = 2 * (x.length - b);
-			System.out.println(table[b][y.length]);
+			//System.out.println(table[b][y.length]);
 		}
 		
 		for(int a = m-1; a>= 0; a--) {
@@ -49,9 +52,9 @@ public class Dynamic {
 		
 		for(int a = 0; a < table.length; a++) {
 			for(int b = 0; b < table[0].length; b++) {
-				System.out.print(table[a][b] + ", ");
+				//System.out.print(table[a][b] + ", ");
 			}
-			System.out.println();
+			//System.out.println();
 		}
 		
 		return table[0][0];
